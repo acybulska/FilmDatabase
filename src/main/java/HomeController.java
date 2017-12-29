@@ -1,11 +1,28 @@
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
 import java.io.File;
+import java.util.List;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
-
+@Controller
 public class HomeController {
-    String[] titles=new String[20];
+    List<String> titles;
     Root root;
+
+    @RequestMapping(value = "", method = RequestMethod.GET)
+    public ModelAndView getdata() {
+
+        List<String> titles = GetTitles();
+
+        ModelAndView model = new ModelAndView("index");
+        model.addObject("titles", titles);
+
+        return model;
+
+    }
 
     public void ReadXml()
     {
@@ -21,10 +38,13 @@ public class HomeController {
         }
     }
 
-    public void ViewTitles()
+    public List<String> GetTitles()
     {
+        ReadXml();
         for (Film film: root.films) {
-            System.out.println(film.title + " " + film.director + ": " + film.year +"\n");
+            titles.add(new String(film.title));
+            //System.out.println(film.title + " " + film.director + ": " + film.year +"\n");
         }
+        return titles;
     }
 }
