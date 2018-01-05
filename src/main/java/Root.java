@@ -1,14 +1,22 @@
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.*;
 
-@XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Root {
-    @XmlElement(name="film")
-    public Film[] films;
+@XmlType(name = "", propOrder = {
+        "films"
+})
 
-    @XmlElement(name="comment")
-    public Comment[] comments;
+@XmlRootElement(name = "root", namespace = "https://www.w3schools.com")
+public class Root {
+
+    @XmlElement(namespace = "https://www.w3schools.com", required = true)
+    protected Films films;
+
+    public Films getFilms() {
+        return films;
+    }
+
+    public void setFilms(Films value) {
+        this.films = value;
+    }
+
 }

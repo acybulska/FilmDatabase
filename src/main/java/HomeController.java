@@ -1,19 +1,20 @@
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.Unmarshaller;
-import java.io.File;
-import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.Unmarshaller;
+import java.io.File;
+import java.util.List;
 
 @Controller
 public class HomeController {
     List<String> titles;
     Root root;
 
-    @RequestMapping(value = "", method = RequestMethod.GET)
-    public ModelAndView getdata() {
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public ModelAndView getData() {
 
         List<String> titles = GetTitles();
 
@@ -41,9 +42,9 @@ public class HomeController {
     public List<String> GetTitles()
     {
         ReadXml();
-        for (Film film: root.films) {
+        for (Film film: root.films.film) {
             titles.add(new String(film.title));
-            //System.out.println(film.title + " " + film.director + ": " + film.year +"\n");
+            System.out.println(film.title + " " + film.director + ": " + film.year +"\n");
         }
         return titles;
     }
