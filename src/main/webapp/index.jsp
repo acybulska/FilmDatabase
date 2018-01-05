@@ -1,13 +1,6 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
-    <script>
-        el = document.getElementById("titles");
-        var ts = ${titles};
-        function getTitles(item,index) {
-            el.innterHTML = el.innterHTML + ts + "<br>";
-        }
-        window.onload=getTitles();
-    </script>
 </head>
 <body>
     <div class="header">
