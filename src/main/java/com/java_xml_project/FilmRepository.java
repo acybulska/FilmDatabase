@@ -1,6 +1,8 @@
 package com.java_xml_project;
 
 import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import java.io.File;
 import java.util.ArrayList;
@@ -43,6 +45,20 @@ public class FilmRepository {
         return root;
     }
 
+    private void SaveXml() {
+        try {
+            File xml = new File("film.xml");
+            JAXBContext jaxbContext = JAXBContext.newInstance(Root.class);
+            Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
+            jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+
+            jaxbMarshaller.marshal(root, xml);
+
+        } catch (JAXBException e) {
+            e.printStackTrace();
+        }
+    }
+
     public Film getRandomFilm(){
         Random rand = new Random();
 
@@ -57,5 +73,16 @@ public class FilmRepository {
         films.add(root.films.film.get(1));
         films.add(root.films.film.get(2));
         return films;
+    }
+
+    public List<Film> findFilmByTitle(String query)
+    {
+        List<Film> output = new ArrayList<>();
+        for (Film a: root.films.film) {
+            if (a.getTitle().toLowerCase().contains(query.toLowerCase()))
+                output.add(a);
+        }
+
+        return output;
     }
 }

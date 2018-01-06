@@ -1,17 +1,19 @@
+
 package com.java_xml_project;
 
 import javax.xml.bind.annotation.*;
 
+
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-        "films"
+    "films"
 })
-
 @XmlRootElement(name = "root", namespace = "https://www.w3schools.com")
 public class Root {
 
     @XmlElement(namespace = "https://www.w3schools.com", required = true)
-    Films films;
+    protected Films films;
+
 
     public Films getFilms() {
         return films;
@@ -20,5 +22,6 @@ public class Root {
     public void setFilms(Films value) {
         this.films = value;
     }
+
 
 }

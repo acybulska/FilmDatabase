@@ -13,10 +13,6 @@ import java.util.List;
 })
 public class Comments {
 
-    public Comments(){
-        comment = new ArrayList<>();
-    }
-
     @XmlElement(namespace = "https://www.w3schools.com")
     protected List<Comment> comment;
 

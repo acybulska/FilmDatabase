@@ -8,16 +8,16 @@ import javax.xml.bind.annotation.*;
         "score",
         "content"
 })
-
 public class Comment {
+
     @XmlElement(namespace = "https://www.w3schools.com", required = true)
     protected String name;
-    @XmlElement(namespace = "https://www.w3schools.com", required = true)
+    @XmlElement(namespace = "https://www.w3schools.com")
     protected int score;
     @XmlElement(namespace = "https://www.w3schools.com", required = true)
     protected String content;
     @XmlAttribute(name = "id")
-    protected int id;
+    protected Integer id;
 
     public String getName() {
         return name;
@@ -43,11 +43,12 @@ public class Comment {
         this.content = value;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int value) {
+    public void setId(Integer value) {
         this.id = value;
     }
+
 }

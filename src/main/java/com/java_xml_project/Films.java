@@ -13,17 +13,8 @@ import java.util.List;
 })
 public class Films {
 
-    public void setFilm(ArrayList<Film> film) {
-        this.film = film;
-    }
-
     @XmlElement(namespace = "https://www.w3schools.com")
-    protected ArrayList<Film> film;
-
-    public Films() {
-        this.film = film;
-
-    }
+    protected List<Film> film;
 
     public List<Film> getFilm() {
         if (film == null) {

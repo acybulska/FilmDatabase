@@ -56,8 +56,7 @@ public class Film {
     @XmlElement(namespace = "https://www.w3schools.com", required = true)
     protected Comments comments;
     @XmlAttribute(name = "id")
-    protected int id;
-
+    protected Integer id;
 
     public String getTitle() {
         return title;
@@ -159,6 +158,9 @@ public class Film {
         return imdbLink;
     }
 
+    public void setImdbLink(String value) {
+        this.imdbLink = value;
+    }
 
     public String getYoutube() {
         return youtube;
@@ -168,9 +170,13 @@ public class Film {
         this.youtube = value;
     }
 
-    public String getPoster() { return poster; }
+    public String getPoster() {
+        return poster;
+    }
 
-    public void setPoster(String poster) { this.poster = poster; }
+    public void setPoster(String value) {
+        this.poster = value;
+    }
 
     public Comments getComments() {
         return comments;
@@ -180,11 +186,12 @@ public class Film {
         this.comments = value;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int value) {
+    public void setId(Integer value) {
         this.id = value;
     }
+
 }
