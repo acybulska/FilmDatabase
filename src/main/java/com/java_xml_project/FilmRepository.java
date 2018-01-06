@@ -6,6 +6,7 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
 
@@ -45,7 +46,7 @@ public class FilmRepository {
         return root;
     }
 
-    private void SaveXml() {
+    private void saveXml() {
         try {
             File xml = new File("film.xml");
             JAXBContext jaxbContext = JAXBContext.newInstance(Root.class);
@@ -61,18 +62,53 @@ public class FilmRepository {
 
     public Film getRandomFilm(){
         Random rand = new Random();
-
         int  n = rand.nextInt(root.films.film.size());
         return root.films.film.get(n);
     }
 
-    public List<Film> getTopThree(){
-        List<Film> films = new ArrayList<>();
+    public Film getFilm(int id){
+        Film selectedFilm = root.films.film.stream().filter(o -> o.id == id).findAny().get();
+        return selectedFilm;
+    }
 
+    public List<Film> getFirstThree(){
+        List<Film> films = new ArrayList<>();
         films.add(root.films.film.get(0));
         films.add(root.films.film.get(1));
         films.add(root.films.film.get(2));
         return films;
+    }
+
+    public List<Film> sortAlphabetically(){
+        List<Film> films = root.getFilms().film;
+        films.sort(Comparator.comparing(o -> o.title));
+        return films;
+    }
+
+    public List<Film> sortByDate(){
+        List<Film> films = root.getFilms().film;
+        films.sort(Comparator.comparing(o -> o.year));
+        return films;
+    }
+
+    public List<Film> sortByNumberOfVotes(){
+        List<Film> films = root.getFilms().film;
+        films.sort(Comparator.comparing(o -> o.comments.comment.size()));
+        return films;
+    }
+
+    public List<Film> sortByRating(){
+        List<Film> films = root.getFilms().film;
+        films.sort((o1, o2) -> {
+            if (calculateRating(o1) > calculateRating(o2))
+                return 1;
+            return 0;
+        });
+        return films;
+    }
+
+    public double calculateRating(Film film){
+        return film.comments.comment.stream().filter(o -> o.score >0).mapToDouble(o -> o.getScore()).sum()/film.comments.comment.size();
     }
 
     public List<Film> findFilmByTitle(String query)
@@ -82,7 +118,6 @@ public class FilmRepository {
             if (a.getTitle().toLowerCase().contains(query.toLowerCase()))
                 output.add(a);
         }
-
         return output;
     }
 }

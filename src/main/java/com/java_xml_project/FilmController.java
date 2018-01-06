@@ -20,7 +20,7 @@ public class FilmController {
     public ModelAndView getHomePage() {
 
         ModelAndView model = new ModelAndView("index");
-        List<Film> topThree = filmRepository.getTopThree();
+        List<Film> topThree = filmRepository.getFirstThree();
         model.addObject("films", topThree);
 
         return model;
@@ -29,7 +29,7 @@ public class FilmController {
     @RequestMapping(value = "/data", method = RequestMethod.GET)
     public ModelAndView getData() {
 
-        Films titles = filmRepository.getRoot().films;
+        List<String> titles = GetTitlesList();
 
         ModelAndView model = new ModelAndView("filmsList");
         model.addObject("titles", titles);
@@ -37,10 +37,10 @@ public class FilmController {
         return model;
     }
 
+    private List<String> GetTitlesList() {
 
-    private List<String> GetMoviesList() {
-
-        for (Film film: filmRepository.getRoot().films.film) {
+        List<Film> films = filmRepository.sortAlphabetically();
+        for (Film film: films){
             titles.add(film.title);
             System.out.println(film.title + " " + film.director + ": " + film.year +"\n");
         }
