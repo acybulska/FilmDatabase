@@ -1,6 +1,8 @@
 package com.java_xml_project;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -35,6 +37,33 @@ public class FilmController {
         model.addObject("titles", titles);
 
         return model;
+    }
+
+//  Comment adding method. Might not be needed, as the comment section & adding should be visible from film's page
+/*    @GetMapping("/addComment")
+    public ModelAndView addComment(@ModelAttribute int filmId){
+       ModelAndView model = new ModelAndView("commentView");
+       model.addObject("filmId",filmId);
+       return model;
+    }
+*/
+
+    @PostMapping("/addComment")
+    public ModelAndView postComment(@ModelAttribute Comment comment, @ModelAttribute int filmId){
+        Film film = filmRepository.getFilm(filmId);
+
+        ModelAndView model = new ModelAndView("index");
+        int index = filmRepository.getRoot().films.film.indexOf(film);
+        film.comments.comment.add(comment);
+        try {
+            filmRepository.getRoot().films.film.set(index,film);
+            model.addObject("message","Comment added successfully");
+            filmRepository.saveXml();
+            return model;
+        }catch (Exception e){
+            model.addObject("message","Something went wrong");
+            return model;
+        }
     }
 
     private List<String> GetTitlesList() {
