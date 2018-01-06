@@ -23,7 +23,7 @@
             </li>
             <li class="searchbox">
                 <form action="#" method="post">
-                    <input type="text" name="Search" placeholder="Search" required="">
+                    <input style="text-align: center;" type="text" name="Search" placeholder="Search" required="">
                     <input class="btn btn-info" type="submit" value="Go">
                 </form>
             </li>
