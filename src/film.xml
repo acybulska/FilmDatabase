@@ -2,7 +2,7 @@
 <root xmlns="https://www.w3schools.com">
     <films>
         <film id="1">
-            <title>Thawshank Redemption</title>
+            <title>Shawshank Redemption</title>
             <director>Frank Darabont</director>
             <year>1994</year>
             <country>USA</country>
@@ -13,8 +13,9 @@
             <cast3>Bob Gunton</cast3>
             <cast4>William Sadler</cast4>
             <cast5>Clancy Brown</cast5>
-            <imdbLink></imdbLink>
-            <youtube></youtube>
+            <imdbLink>http://www.imdb.com/title/tt0111161/</imdbLink>
+            <youtube>https://www.youtube.com/watch?v=K_tLp7T6U1c</youtube>
+            <poster>https://images-na.ssl-images-amazon.com/images/I/51SPVi-1rXL._SY450_.jpg</poster>
             <comments>
                 <comment id="1">
                     <name>Lisa</name>
@@ -35,8 +36,9 @@
             <cast3>James Caan</cast3>
             <cast4>Richard S. Castellano</cast4>
             <cast5>Robert Duvall</cast5>
-            <imdbLink></imdbLink>
-            <youtube></youtube>
+            <imdbLink>http://www.imdb.com/title/tt0068646/</imdbLink>
+            <youtube>https://www.youtube.com/watch?v=sY1S34973zA</youtube>
+            <poster>http://imgc.allpostersimages.com/img/posters/the-godfather_u-L-F4Q5ES0.jpg</poster>
             <comments>
                 <comment id="1">
                     <name>Lisa</name>
@@ -57,8 +59,9 @@
             <cast3>Diane Keaton</cast3>
             <cast4>Robert De Niro</cast4>
             <cast5>John Cazale</cast5>
-            <imdbLink></imdbLink>
-            <youtube></youtube>
+            <imdbLink>http://www.imdb.com/title/tt0071562</imdbLink>
+            <youtube>https://www.youtube.com/watch?v=9O1Iy9od7-A</youtube>
+            <poster>https://i.pinimg.com/736x/f1/9c/ae/f19caea3cd43cb25145c3d076d23d02a--watch-the-godfather-the-godfather-part-ii.jpg</poster>
             <comments>
                 <comment id="1">
                     <name>Lisa</name>

@@ -1,3 +1,5 @@
+package com.java_xml_project;
+
 import javax.xml.bind.annotation.*;
 
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -16,6 +18,7 @@ import javax.xml.bind.annotation.*;
         "cast5",
         "imdbLink",
         "youtube",
+        "poster",
         "comments"
 })
 public class Film {
@@ -48,6 +51,8 @@ public class Film {
     protected String imdbLink;
     @XmlElement(namespace = "https://www.w3schools.com")
     protected String youtube;
+    @XmlElement(namespace = "https://www.w3schools.com")
+    protected String poster;
     @XmlElement(namespace = "https://www.w3schools.com", required = true)
     protected Comments comments;
     @XmlAttribute(name = "id")
@@ -162,6 +167,10 @@ public class Film {
     public void setYoutube(String value) {
         this.youtube = value;
     }
+
+    public String getPoster() { return poster; }
+
+    public void setPoster(String poster) { this.poster = poster; }
 
     public Comments getComments() {
         return comments;

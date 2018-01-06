@@ -1,3 +1,5 @@
+package com.java_xml_project;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -16,15 +18,16 @@ public class Films {
     }
 
     @XmlElement(namespace = "https://www.w3schools.com")
-    protected List<Film> film;
+    protected ArrayList<Film> film;
 
     public Films() {
         this.film = film;
+
     }
 
     public List<Film> getFilm() {
         if (film == null) {
-            film = new ArrayList<Film>();
+            film = new ArrayList<>();
         }
         return this.film;
     }

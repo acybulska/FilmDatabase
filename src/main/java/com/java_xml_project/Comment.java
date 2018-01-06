@@ -1,3 +1,5 @@
+package com.java_xml_project;
+
 import javax.xml.bind.annotation.*;
 
 @XmlAccessorType(XmlAccessType.FIELD)

@@ -1,3 +1,5 @@
+package com.java_xml_project;
+
 import javax.xml.bind.annotation.*;
 
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -9,7 +11,7 @@ import javax.xml.bind.annotation.*;
 public class Root {
 
     @XmlElement(namespace = "https://www.w3schools.com", required = true)
-    protected Films films;
+    Films films;
 
     public Films getFilms() {
         return films;
