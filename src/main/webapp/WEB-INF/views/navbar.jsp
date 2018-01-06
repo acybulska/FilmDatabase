@@ -21,9 +21,9 @@
                     </li>
                 </ul>
             </li>
-            <li class="searchbox">
+            <li class="searchbox"style=" align-content: right;">
                 <form action="#" method="post">
-                    <input type="text" name="Search" placeholder="Search" required="">
+                    <input style="text-align: center;" type="text" name="Search" placeholder="Search" required="">
                     <input class="btn btn-info" type="submit" value="Go">
                 </form>
             </li>
