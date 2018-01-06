@@ -46,7 +46,7 @@ public class FilmRepository {
         return root;
     }
 
-    private void saveXml() {
+    void saveXml() {
         try {
             File xml = new File("film.xml");
             JAXBContext jaxbContext = JAXBContext.newInstance(Root.class);
