@@ -20,13 +20,25 @@ public class FilmController {
 
         ModelAndView model = new ModelAndView("index");
         List<Film> topThree = filmRepository.getFirstThree();
+        List<Film> ratings = filmRepository.sortByRating();
         model.addObject("films", topThree);
-
+        model.addObject("ratingFilms", ratings);
         return model;
     }
 
     @RequestMapping(value = "/data", method = RequestMethod.GET)
     public ModelAndView getData() {
+
+        List<String> titles = GetTitlesList();
+
+        ModelAndView model = new ModelAndView("filmsList");
+        model.addObject("titles", titles);
+
+        return model;
+    }
+
+    @RequestMapping(value = "/data/{param}", method = RequestMethod.GET)
+    public ModelAndView getData(@PathVariable String param) {
 
         List<String> titles = GetTitlesList();
 

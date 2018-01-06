@@ -68,22 +68,22 @@
                             </div>
                         </div>
                     </div>
-                    <div role="tabpanel" class="tab-pane fade active in" id="rating" aria-labelledby="home-tab">
+                    <div role="tabpanel"  class="tab-pane fade active in" id="rating" aria-labelledby="home-tab">
                         <div class="w3_agile_featured_movies">
                             <div class="w3l-movie-gride-agile">
-                                <c:forEach items="${films}" varStatus="filmCount" step="3">
+                                <c:forEach items="${ratingFilms}" varStatus="filmCount" step="3">
                                     <div class="row movie-image">
                                         <div class="col-xs-3 film-thumbnail">
-                                            <img class="film-poster" src="${films[3*(filmCount.count-1)].poster}" alt="movie"/>
-                                            <p>${films[3*(filmCount.count-1)].title}</p>
+                                            <img class="film-poster" src="${ratingFilms[3*(filmCount.count-1)].poster}" alt="movie"/>
+                                            <p>${ratingFilms[3*(filmCount.count-1)].title}</p>
                                         </div>
                                         <div class="col-xs-3 film-thumbnail">
-                                            <img class="film-poster" src="${films[3*(filmCount.count-1)+1].poster}" alt="movie"/>
-                                            <p>${films[3*(filmCount.count-1)+1].title}</p>
+                                            <img class="film-poster" src="${ratingFilms[3*(filmCount.count-1)+1].poster}" alt="movie"/>
+                                            <p>${ratingFilms[3*(filmCount.count-1)+1].title}</p>
                                         </div>
                                         <div class="col-xs-3 film-thumbnail">
-                                            <img class="film-poster" src="${films[3*(filmCount.count-1)+2].poster}" alt="movie"/>
-                                            <p>${films[3*(filmCount.count-1)+2].title}</p>
+                                            <img class="film-poster" src="${ratingFilms[3*(filmCount.count-1)+2].poster}" alt="movie"/>
+                                            <p>${ratingFilms[3*(filmCount.count-1)+2].title}</p>
                                         </div>
                                     </div>
                                 </c:forEach>
