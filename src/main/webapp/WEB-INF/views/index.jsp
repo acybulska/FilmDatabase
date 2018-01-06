@@ -30,11 +30,22 @@
 </div>
 
 <div class="container">
-<c:forEach items="${films}" var="film">
-        <div class="movie-image">
-            <span class="play"><span class="name">${film.title}</span></span><img src="${film.poster}" alt="movie" >
-        </div>
-</c:forEach>
+    <table>
+        <tr>
+            <c:forEach items="${films}" var="film">
+                <td>
+                    <img width="208" height="301" src="${film.poster}" alt="movie" >
+                </td>
+            </c:forEach>
+        </tr>
+        <tr>
+            <c:forEach items="${films}" var="film">
+                <td>
+                    <span><a href="/movie/${film.id}" class="name">${film.title}</a></span>
+                </td>
+            </c:forEach>
+        </tr>
+    </table>
 </div>
 
 <div class="container">

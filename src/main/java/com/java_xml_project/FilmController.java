@@ -1,10 +1,7 @@
 package com.java_xml_project;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
@@ -36,6 +33,15 @@ public class FilmController {
         ModelAndView model = new ModelAndView("filmsList");
         model.addObject("titles", titles);
 
+        return model;
+    }
+
+    @RequestMapping(value = "/movie/{filmId}", method = RequestMethod.GET)
+    public ModelAndView showFilm(@PathVariable("filmId") int filmId){
+        Film film = filmRepository.getFilm(filmId);
+        ModelAndView model = new ModelAndView("film");  // Needs a correct view ere
+        model.addObject("film",film);
+        model.addObject("rating",filmRepository.calculateRating(film));
         return model;
     }
 
