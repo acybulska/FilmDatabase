@@ -1,41 +1,102 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Films Database</title>
-
-    <spring:url value="/resources/core/css/hello.css" var="coreCss" />
-    <spring:url value="/resources/core/css/bootstrap.min.css" var="bootstrapCss" />
-    <link href="${bootstrapCss}" rel="stylesheet" />
-    <link href="${coreCss}" rel="stylesheet" />
+    <jsp:include page="styles.jsp"/>
 </head>
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">Films List</a>
-        </div>
-    </div>
-</nav>
-
-
-
-<div class="jumbotron">
-    <div class="container">
-        <h1>Welcome to Films Database!</h1>
-        <p>
-        </p>
-    </div>
-</div>
-
 <div class="container">
-<c:forEach items="${films}" var="film">
-        <div class="movie-image">
-            <span class="play"><span class="name">${film.title}</span></span><img src="${film.poster}" alt="movie" >
+    <div class="mjx-header">
+        <h1>Welcome to Films Database!</h1>
+    </div>
+    <div id="film-navbar" class="row">
+        <jsp:include page="navbar.jsp"/>
+    </div>
+    <div class="row">
+    <div class="col-md-12 mjx-films-list">
+        <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">Featured</a></li>
+                <li role="presentation"><a href="#popularity" role="tab" id="popularity-tab" data-toggle="tab" aria-controls="popularity" aria-expanded="false">Top Viewed</a></li>
+                <li role="presentation"><a href="#rating" id="rating-tab" role="tab" data-toggle="tab" aria-controls="rating" aria-expanded="true">Top Rating</a></li>
+            </ul>
+            <div id="featured" class="col-md-10 tab-content">
+                <div role="tabpanel" class="tab-pane fade active in" id="home" aria-labelledby="home-tab">
+                    <div class="w3_agile_featured_movies">
+                        <div class="w3l-movie-gride-agile">
+                                <c:forEach items="${films}" varStatus="filmCount" step="3">
+                                        <div class="row movie-image">
+                                            <div class="col-xs-3 film-thumbnail">
+                                                <img class="film-poster" src="${films[3*(filmCount.count-1)].poster}" alt="movie"/>
+                                                <p>${films[3*(filmCount.count-1)].title}</p>
+                                            </div>
+                                            <div class="col-xs-3 film-thumbnail">
+                                                <img class="film-poster" src="${films[3*(filmCount.count-1)+1].poster}" alt="movie"/>
+                                                <p>${films[3*(filmCount.count-1)+1].title}</p>
+                                            </div>
+                                            <div class="col-xs-3 film-thumbnail">
+                                                <img class="film-poster" src="${films[3*(filmCount.count-1)+2].poster}" alt="movie"/>
+                                                <p>${films[3*(filmCount.count-1)+2].title}</p>
+                                            </div>
+                                        </div>
+                                </c:forEach>
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane fade active in" id="popularity" aria-labelledby="home-tab">
+                    <div class="w3_agile_featured_movies">
+                        <div class="w3l-movie-gride-agile">
+                            <c:forEach items="${films}" varStatus="filmCount" step="3">
+                                <div class="row movie-image">
+                                    <div class="col-xs-3 film-thumbnail">
+                                        <img class="film-poster" src="${films[3*(filmCount.count-1)].poster}" alt="movie"/>
+                                        <p>${films[3*(filmCount.count-1)].title}</p>
+                                    </div>
+                                    <div class="col-xs-3 film-thumbnail">
+                                        <img class="film-poster" src="${films[3*(filmCount.count-1)+1].poster}" alt="movie"/>
+                                        <p>${films[3*(filmCount.count-1)+1].title}</p>
+                                    </div>
+                                    <div class="col-xs-3 film-thumbnail">
+                                        <img class="film-poster" src="${films[3*(filmCount.count-1)+2].poster}" alt="movie"/>
+                                        <p>${films[3*(filmCount.count-1)+2].title}</p>
+                                    </div>
+                                </div>
+                            </c:forEach>
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane fade active in" id="rating" aria-labelledby="home-tab">
+                    <div class="w3_agile_featured_movies">
+                        <div class="w3l-movie-gride-agile">
+                            <c:forEach items="${films}" varStatus="filmCount" step="3">
+                                <div class="row movie-image">
+                                    <div class="col-xs-3 film-thumbnail">
+                                        <img class="film-poster" src="${films[3*(filmCount.count-1)].poster}" alt="movie"/>
+                                        <p>${films[3*(filmCount.count-1)].title}</p>
+                                    </div>
+                                    <div class="col-xs-3 film-thumbnail">
+                                        <img class="film-poster" src="${films[3*(filmCount.count-1)+1].poster}" alt="movie"/>
+                                        <p>${films[3*(filmCount.count-1)+1].title}</p>
+                                    </div>
+                                    <div class="col-xs-3 film-thumbnail">
+                                        <img class="film-poster" src="${films[3*(filmCount.count-1)+2].poster}" alt="movie"/>
+                                        <p>${films[3*(filmCount.count-1)+2].title}</p>
+                                    </div>
+                                </div>
+                            </c:forEach>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
         </div>
-</c:forEach>
+    </div>
+    </div>
 </div>
+
 
 <div class="container">
 
@@ -66,13 +127,6 @@
         <p>&copy; Order of Fat Panda 2018</p>
     </footer>
 </div>
-
-<spring:url value="/resources/core/css/hello.js" var="coreJs" />
-<spring:url value="/resources/core/css/bootstrap.min.js" var="bootstrapJs" />
-
-<script src="${coreJs}"></script>
-<script src="${bootstrapJs}"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-
+<jsp:include page="scripts.jsp"/>
 </body>
 </html>
