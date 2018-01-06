@@ -1,32 +1,18 @@
-<div class="collapse navbar-collapse navbar-left" id="film-navbar">
-    <nav>
-        <ul class="nav navbar-nav">
-            <li class="active"><a href="#index.jsp">Home</a></li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Genres <b class="caret"></b></a>
-                <ul class="dropdown-menu multi-column columns-3">
-                    <li>
-                        <div class="col-sm-4">
-                            <ul class="multi-column-dropdown">
-                                <li><a href="genres.html">Action</a></li>
-                                <li><a href="genres.html">Biography</a></li>
-                                <li><a href="genres.html">Crime</a></li>
-                                <li><a href="genres.html">Family</a></li>
-                                <li><a href="horror.html">Horror</a></li>
-                                <li><a href="genres.html">Romance</a></li>
-                                <li><a href="genres.html">Sports</a></li>
-                                <li><a href="genres.html">War</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-            </li>
-            <li class="searchbox">
-                <form action="#" method="post">
-                    <input style="text-align: center;" type="text" name="Search" placeholder="Search" required="">
-                    <input class="btn btn-info" type="submit" value="Go">
-                </form>
-            </li>
-        </ul>
-    </nav>
+<div class="container">
+    <header>
+        <h1 style="font-family:'Bauhaus 93'; font-size: 100px; ">Movie Database</h1>
+    </header>
+    <div class="collapse navbar-collapse navbar bg-info" id="film-navbar">
+        <nav>
+            <ul class="nav navbar-nav">
+                <li class="searchbox">
+                    <form class="form-inline form-group">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit"style="margin-left: -4px;">GO</button>
+                    </form>
+                </li>
+                <li class="active" style="text-align: right"><a href="#index.jsp">Home</a></li>
+            </ul>
+        </nav>
+    </div>
 </div>

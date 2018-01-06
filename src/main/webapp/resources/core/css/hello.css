@@ -4,7 +4,25 @@
     max-height: 240px;
     padding-bottom: 5px;
 }
+
+.film-poster-detail
+{
+    max-width: 360px;
+    max-height: 480px;
+    padding:10px;
+}
+
 .film-thumbnail {
     margin: 10px;
     align-content: center;
+}
+
+.comment-detail {
+    border: 2px gray;
+}
+
+.searchbox
+{
+    margin-top: 8px;
+    margin-bottom: -8px;
 }
