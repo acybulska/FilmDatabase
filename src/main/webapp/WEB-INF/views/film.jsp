@@ -79,7 +79,7 @@
         <div class="col-sm-10">
             <h3>Comments</h3>
             <c:forEach items="${film.comments.comment}" var="comment">
-                <div id="comment-${comment.id}" class="comment-detail row bg-info">
+                <div id="comment-${comment.id}" class="comment-detail row bg-info" style="margin-bottom: 20px; padding-bottom:10px; padding-top: 10px">
                     <div class="col-sm-2">
                         <h4 style="text-align: center">${comment.name}</h4>
                         <div class="star-container">
