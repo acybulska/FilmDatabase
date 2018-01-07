@@ -1,5 +1,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html lang="en">
 <head>
     <title>${film.title} - Movie Database</title>
@@ -50,12 +51,13 @@
         <h3>Comments</h3>
         <div class="enter-comment row">
             <div class="col-md-6">
-                <form>
-                    <input type="text" placeholder="Name" required="">
-                    <input type="text" placeholder="Score" required="">
-                    <textarea placeholder="Message" required=""></textarea>
+                <form:form modelAttribute="comment" method="post" action="/addComment">
+                    <form:input cssClass="" path="name" placeholder="Name"/>
+                    <form:radiobuttons cssClass="" items="${scores}" path="score"/>
+                    <form:textarea cssClass="" placeholder="Message" path="content"/>
+                    <form:hidden path="id"/>
                     <input type="submit" value="SEND">
-                </form>
+                </form:form>
             </div>
         </div>
         <div class="comments-section">

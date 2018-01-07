@@ -17,7 +17,6 @@ public class FilmController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView getHomePage() {
-
         ModelAndView model = new ModelAndView("index");
         List<Film> topThree = filmRepository.getFirstThree();
         List<Film> ratings = filmRepository.sortByRating();
@@ -28,64 +27,59 @@ public class FilmController {
 
     @RequestMapping(value = "/data", method = RequestMethod.GET)
     public ModelAndView getData() {
-
         List<String> titles = GetTitlesList();
-
         ModelAndView model = new ModelAndView("filmsList");
         model.addObject("titles", titles);
-
         return model;
     }
 
     @RequestMapping(value = "/data/{param}", method = RequestMethod.GET)
     public ModelAndView getData(@PathVariable String param) {
-
         List<String> titles = GetTitlesList();
-
         ModelAndView model = new ModelAndView("filmsList");
         model.addObject("titles", titles);
-
         return model;
     }
 
     @RequestMapping(value = "/movie/{filmId}", method = RequestMethod.GET)
     public ModelAndView showFilm(@PathVariable("filmId") int filmId){
+        ArrayList<Integer> scores = new ArrayList<>();
+        scores.add(1); scores.add(2); scores.add(3); scores.add(4); scores.add(5); scores.add(6); scores.add(7); scores.add(8); scores.add(9); scores.add(10);
         Film film = filmRepository.getFilm(filmId);
-        ModelAndView model = new ModelAndView("film");  // Needs a correct view ere
+        ModelAndView model = new ModelAndView("film");
+        Comment comment = new Comment();
+        comment.setId(filmId);
+
         model.addObject("film",film);
         model.addObject("rating",filmRepository.calculateRating(film));
+        model.addObject("comment",comment);
+        model.addObject("scores",scores);
         return model;
     }
 
-//  Comment adding method. Might not be needed, as the comment section & adding should be visible from film's page
-/*    @GetMapping("/addComment")
-    public ModelAndView addComment(@ModelAttribute int filmId){
-       ModelAndView model = new ModelAndView("commentView");
-       model.addObject("filmId",filmId);
-       return model;
-    }
-*/
-
     @PostMapping("/addComment")
-    public ModelAndView postComment(@ModelAttribute Comment comment, @ModelAttribute int filmId){
-        Film film = filmRepository.getFilm(filmId);
-
-        ModelAndView model = new ModelAndView("index");
+    public ModelAndView postComment(@ModelAttribute("comment") Comment comment, @ModelAttribute Film selectedFilm){
+        Film film = filmRepository.getFilm(selectedFilm.id);
         int index = filmRepository.getRoot().films.film.indexOf(film);
         film.comments.comment.add(comment);
         try {
             filmRepository.getRoot().films.film.set(index,film);
-            model.addObject("message","Comment added successfully");
             filmRepository.saveXml();
-            return model;
+            return new ModelAndView("redirect:/movie/" + selectedFilm.id);
         }catch (Exception e){
-            model.addObject("message","Something went wrong");
-            return model;
+            return new ModelAndView("redirect:/movie/" + selectedFilm.id);
         }
     }
 
-    private List<String> GetTitlesList() {
+    @PostMapping("/search")
+    public ModelAndView searchMovies(@RequestParam("query") String query){
+        List<Film> films = filmRepository.findFilmByTitle(query);
+        ModelAndView model = new ModelAndView("filmsList");
+        model.addObject("films", films);
+        return model;
+    }
 
+    private List<String> GetTitlesList() {
         List<Film> films = filmRepository.sortAlphabetically();
         for (Film film: films){
             titles.add(film.title);
@@ -93,5 +87,4 @@ public class FilmController {
         }
         return titles;
     }
-
 }

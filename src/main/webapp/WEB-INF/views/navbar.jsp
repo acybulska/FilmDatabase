@@ -6,12 +6,12 @@
         <nav>
             <ul class="nav navbar-nav">
                 <li class="searchbox">
-                    <form class="form-inline form-group">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <form class="form-inline form-group" method="post" action="/search">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search" name="query">
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit"style="margin-left: -4px;">GO</button>
                     </form>
                 </li>
-                <li class="active" style="text-align: right"><a href="#index.jsp">Home</a></li>
+                <li class="active" style="text-align: right"><a href="/">Home</a></li>
             </ul>
         </nav>
     </div>
