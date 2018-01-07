@@ -61,14 +61,17 @@ public class FilmController {
     public ModelAndView postComment(@ModelAttribute("comment") Comment comment, @ModelAttribute Film selectedFilm){
         Film film = filmRepository.getFilm(selectedFilm.id);
         int index = filmRepository.getRoot().films.film.indexOf(film);
-        film.comments.addComment(comment);
-        try {
-            filmRepository.getRoot().films.film.set(index,film);
-            filmRepository.saveXml();
-            return new ModelAndView("redirect:/movie/" + selectedFilm.id);
-        }catch (Exception e){
-            return new ModelAndView("redirect:/movie/" + selectedFilm.id);
+        if (!(comment.name.isEmpty() || comment == null) && comment.score != 0) {
+            film.comments.addComment(comment);
+            try {
+                filmRepository.getRoot().films.film.set(index, film);
+                filmRepository.saveXml();
+                return new ModelAndView("redirect:/movie/" + selectedFilm.id);
+            } catch (Exception e) {
+                return new ModelAndView("redirect:/movie/" + selectedFilm.id);
+            }
         }
+        return  new ModelAndView("redirected:/movie/" + selectedFilm.id);
     }
 
     @RequestMapping(value = "/search")
