@@ -21,8 +21,21 @@
     border: 2px gray;
 }
 
-.searchbox
-{
-    margin-top: 8px;
-    margin-bottom: -8px;
+.star-container {
+    position: relative;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.centered-text {
+    position: absolute;
+    top: 30%;
+    bottom: 70%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 20px;
+}
+
+textarea {
+    resize: none;
 }

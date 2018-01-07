@@ -38,10 +38,17 @@ public class FilmController {
 
     @RequestMapping(value = "/movie/{filmId}", method = RequestMethod.GET)
     public ModelAndView showFilm(@PathVariable("filmId") int filmId){
+        ArrayList<Integer> scores = new ArrayList<>();
+        scores.add(1); scores.add(2); scores.add(3); scores.add(4); scores.add(5); scores.add(6); scores.add(7); scores.add(8); scores.add(9); scores.add(10);
         Film film = filmRepository.getFilm(filmId);
-        ModelAndView model = new ModelAndView("film");  // Needs a correct view ere
+        ModelAndView model = new ModelAndView("film");
+        Comment comment = new Comment();
+        comment.setId(filmId);
+
         model.addObject("film",film);
         model.addObject("rating",filmRepository.calculateRating(film));
+        model.addObject("comment",comment);
+        model.addObject("scores",scores);
         return model;
     }
 
