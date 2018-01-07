@@ -18,10 +18,12 @@ public class FilmController {
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView getHomePage() {
         ModelAndView model = new ModelAndView("index");
-        List<Film> topThree = filmRepository.getFirstThree();
+        List<Film> topThree = filmRepository.getRandomThreeFilms();
+        List<Film> topviev = filmRepository.sortByNumberOfVotes();
         List<Film> ratings = filmRepository.sortByRating();
         model.addObject("films", topThree);
         model.addObject("ratingFilms", ratings);
+        model.addObject("topViewFilms", topviev);
         return model;
     }
 

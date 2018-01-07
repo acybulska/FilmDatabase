@@ -65,6 +65,19 @@ public class FilmRepository {
         return root.films.film.get(n);
     }
 
+    public  List<Film> getRandomThreeFilms() {
+        if (root.films.film.size() < 4)
+            return root.films.film;
+        List<Film> output = new ArrayList<>();
+        do {
+            Film film = getRandomFilm();
+            if (!output.contains(film))
+                output.add(film);
+        } while (output.size() < 3);
+        return output;
+    }
+
+
     public Film getFilm(int id){
         Film selectedFilm = root.films.film.stream().filter(o -> o.id == id).findAny().get();
         return selectedFilm;

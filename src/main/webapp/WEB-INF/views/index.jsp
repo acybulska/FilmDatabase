@@ -48,24 +48,24 @@
                     <div role="tabpanel" class="tab-pane fade active in" id="popularity" aria-labelledby="home-tab">
                         <div class="w3_agile_featured_movies">
                             <div class="w3l-movie-gride-agile">
-                                <c:forEach items="${films}" varStatus="filmCount" step="3">
+                                <c:forEach items="${topViewFilms}" varStatus="filmCount" step="3">
                                     <div class="row movie-image">
                                         <div class="col-xs-3 film-thumbnail">
-                                            <a href="/movie/${films[3*(filmCount.count-1)].id}">
-                                                <img class="film-poster" src="${films[3*(filmCount.count-1)].poster}" alt="movie"/>
-                                                <p>${films[3*(filmCount.count-1)].title}</p>
+                                            <a href="/movie/${topViewFilms[3*(filmCount.count-1)].id}">
+                                                <img class="film-poster" src="${topViewFilms[3*(filmCount.count-1)].poster}" alt="movie"/>
+                                                <p>${topViewFilms[3*(filmCount.count-1)].title}</p>
                                             </a>
                                         </div>
                                         <div class="col-xs-3 film-thumbnail">
-                                            <a href="/movie/${films[3*(filmCount.count-1)+1].id}">
-                                                <img class="film-poster" src="${films[3*(filmCount.count-1)+1].poster}" alt="movie"/>
-                                                <p>${films[3*(filmCount.count-1)+1].title}</p>
+                                            <a href="/movie/${topViewFilms[3*(filmCount.count-1)+1].id}">
+                                                <img class="film-poster" src="${topViewFilms[3*(filmCount.count-1)+1].poster}" alt="movie"/>
+                                                <p>${topViewFilms[3*(filmCount.count-1)+1].title}</p>
                                             </a>
                                         </div>
                                         <div class="col-xs-3 film-thumbnail">
-                                            <a href="/movie/${films[3*(filmCount.count-1)+2].id}">
-                                                <img class="film-poster" src="${films[3*(filmCount.count-1)+2].poster}" alt="movie"/>
-                                                <p>${films[3*(filmCount.count-1)+2].title}</p>
+                                            <a href="/movie/${topViewFilms[3*(filmCount.count-1)+2].id}">
+                                                <img class="film-poster" src="${topViewFilms[3*(filmCount.count-1)+2].poster}" alt="movie"/>
+                                                <p>${topViewFilms[3*(filmCount.count-1)+2].title}</p>
                                             </a>
                                         </div>
                                     </div>
