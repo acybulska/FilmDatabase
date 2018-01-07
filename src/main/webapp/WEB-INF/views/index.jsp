@@ -81,7 +81,7 @@
                                         <div class="col-xs-3 film-thumbnail">
                                             <a href="/movie/${ratingFilms[3*(filmCount.count-1)].id}">
                                                 <img class="film-poster" src="${ratingFilms[3*(filmCount.count-1)].poster}" alt="movie"/>
-                                                <p>${films[3*(filmCount.count-1)].title}</p>
+                                                <p>${ratingFilms[3*(filmCount.count-1)].title}</p>
                                             </a>
                                         </div>
                                         <div class="col-xs-3 film-thumbnail">
@@ -92,7 +92,7 @@
                                         </div>
                                         <div class="col-xs-3 film-thumbnail">
                                             <a href="/movie/${ratingFilms[3*(filmCount.count-1)+2].id}">
-                                                <img class="film-poster" src="${films[3*(filmCount.count-1)+2].poster}" alt="movie"/>
+                                                <img class="film-poster" src="${ratingFilms[3*(filmCount.count-1)+2].poster}" alt="movie"/>
                                                 <p>${ratingFilms[3*(filmCount.count-1)+2].title}</p>
                                             </a>
                                         </div>

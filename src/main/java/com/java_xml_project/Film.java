@@ -58,6 +58,13 @@ public class Film {
     @XmlAttribute(name = "id")
     protected Integer id;
 
+
+    public Double getRating() {
+        if (this.comments.comment.size() == 0)
+            return  0.0;
+        return this.comments.comment.stream().filter(o -> o.score >0).mapToDouble(o -> o.getScore()).sum()/this.comments.comment.size();
+    }
+
     public String getTitle() {
         return title;
     }

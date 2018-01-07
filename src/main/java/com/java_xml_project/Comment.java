@@ -51,4 +51,7 @@ public class Comment {
         this.id = value;
     }
 
+    public void setRandomId() {
+
+    }
 }

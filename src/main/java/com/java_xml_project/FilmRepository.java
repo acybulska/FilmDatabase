@@ -5,10 +5,7 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class FilmRepository {
 
@@ -19,6 +16,8 @@ public class FilmRepository {
     }
 
     private Root root;
+
+    private  String fileLocation = "C:\\Users\\miki\\Desktop\\film.xml";
 
     private FilmRepository(){
         root = ReadXml();
@@ -37,7 +36,7 @@ public class FilmRepository {
             JAXBContext jaxbContext = JAXBContext.newInstance(Root.class);
 
             Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
-            File xml = new File("film.xml");
+            File xml = new File(fileLocation);
             root = (Root) unmarshaller.unmarshal(xml);
 
         } catch (Exception e) {
@@ -48,7 +47,7 @@ public class FilmRepository {
 
     void saveXml() {
         try {
-            File xml = new File("film.xml");
+            File xml = new File(fileLocation);
             JAXBContext jaxbContext = JAXBContext.newInstance(Root.class);
             Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
             jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
@@ -99,11 +98,7 @@ public class FilmRepository {
 
     public List<Film> sortByRating(){
         List<Film> films = root.getFilms().film;
-        films.sort((o1, o2) -> {
-            if (calculateRating(o1) > calculateRating(o2))
-                return 1;
-            return 0;
-        });
+        Collections.sort(films, Comparator.comparingDouble(Film::getRating).reversed());
         return films;
     }
 

@@ -1,7 +1,7 @@
 .film-poster
 {
-    max-width: 180px;
-    max-height: 240px;
+    width: 180px;
+    height: 240px;
     padding-bottom: 5px;
 }
 

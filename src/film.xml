@@ -1,6 +1,51 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <root xmlns="https://www.w3schools.com">
     <films>
+        <film id="20">
+            <title>Kimi no Na wa</title>
+            <director>Makoto Shinkai</director>
+            <year>2016</year>
+            <duration>1h 46min</duration>
+            <country>Japan</country>
+            <genre1>Anime</genre1>
+            <genre2>Drama</genre2>
+            <cast1>Mone Kamishiraishi</cast1>
+            <cast2>Ryunosuke Kamiki</cast2>
+            <cast3>Nobunaga Shimazaki</cast3>
+            <cast4>Kanon Tani</cast4>
+            <cast5>Aoi Yuuki</cast5>
+            <imdbLink></imdbLink>
+            <youtube></youtube>
+            <poster>http://1.fwcdn.pl/po/00/82/760082/7742564.3.jpg</poster>
+            <comments>
+                <comment>
+                    <name>miki</name>
+                    <score>10</score>
+                    <content>Probably best Shinaki.</content>
+                </comment>
+                <comment id="1">
+                    <name>Lisa</name>
+                    <score>9</score>
+                    <content>Nie znam sie</content>
+                </comment>
+                <comment id="20">
+                    <name>block</name>
+                    <score>8</score>
+                    <content>block block</content>
+                </comment>
+                <comment id="20">
+                    <name>Arek</name>
+                    <score>10</score>
+                    <content>Clouds cool as always.</content>
+                </comment>
+                <comment id="20">
+                    <name>Woda</name>
+                    <score>10</score>
+                    <content>plum plum&#xD;
+</content>
+                </comment>
+            </comments>
+        </film>
         <film id="1">
             <title>Shawshank Redemption</title>
             <director>Frank Darabont</director>
@@ -15,7 +60,7 @@
             <cast5>Clancy Brown</cast5>
             <imdbLink>http://www.imdb.com/title/tt0111161/</imdbLink>
             <youtube>https://www.youtube.com/watch?v=K_tLp7T6U1c</youtube>
-            <poster>gunwo</poster>
+            <poster>http://1.fwcdn.pl/po/10/48/1048/6925401.3.jpg</poster>
             <comments>
                 <comment id="1">
                     <name>Lisa</name>
@@ -84,6 +129,7 @@
             <cast5>Maggie Gyllenhaal</cast5>
             <imdbLink></imdbLink>
             <youtube></youtube>
+            <poster>http://1.fwcdn.pl/po/63/51/236351/7198307.3.jpg</poster>
             <comments>
                 <comment id="1">
                     <name>Lisa</name>
@@ -106,6 +152,7 @@
             <cast5>Jack Klugman</cast5>
             <imdbLink></imdbLink>
             <youtube></youtube>
+            <poster>http://1.fwcdn.pl/po/07/01/30701/7492190.3.jpg</poster>
             <comments>
                 <comment id="1">
                     <name>Lisa</name>
@@ -128,6 +175,7 @@
             <cast5>Jonathan Sagall</cast5>
             <imdbLink></imdbLink>
             <youtube></youtube>
+            <poster>http://1.fwcdn.pl/po/12/11/1211/6939680.3.jpg</poster>
             <comments>
                 <comment id="1">
                     <name>Lisa</name>
@@ -150,6 +198,7 @@
             <cast5>Samuel L. Jackson</cast5>
             <imdbLink></imdbLink>
             <youtube></youtube>
+            <poster>http://1.fwcdn.pl/po/10/39/1039/7517880.3.jpg</poster>
             <comments>
                 <comment id="1">
                     <name>Lisa</name>
@@ -172,6 +221,7 @@
             <cast5>Viggo Mortensen</cast5>
             <imdbLink></imdbLink>
             <youtube></youtube>
+            <poster>http://1.fwcdn.pl/po/18/41/11841/6940625.3.jpg</poster>
             <comments>
                 <comment id="1">
                     <name>Lisa</name>
@@ -193,6 +243,7 @@
             <cast5>Luigi Pistilli</cast5>
             <imdbLink></imdbLink>
             <youtube></youtube>
+            <poster>http://1.fwcdn.pl/po/51/03/5103/7043310.3.jpg</poster>
             <comments>
                 <comment id="1">
                     <name>Lisa</name>
@@ -214,6 +265,7 @@
             <cast5>Jared Leto</cast5>
             <imdbLink></imdbLink>
             <youtube></youtube>
+            <poster>http://1.fwcdn.pl/po/08/37/837/6909462.3.jpg</poster>
             <comments>
                 <comment id="1">
                     <name>Lisa</name>
@@ -236,6 +288,7 @@
             <cast5>Andy Serkis</cast5>
             <imdbLink></imdbLink>
             <youtube></youtube>
+            <poster>http://1.fwcdn.pl/po/10/65/1065/7351492.3.jpg</poster>
             <comments>
                 <comment id="1">
                     <name>Lisa</name>
@@ -258,6 +311,7 @@
             <cast5>Michael Conner Humphreys</cast5>
             <imdbLink></imdbLink>
             <youtube></youtube>
+            <poster>http://1.fwcdn.pl/po/09/98/998/7139497.3.jpg</poster>
             <comments>
                 <comment id="1">
                     <name>Lisa</name>
@@ -280,6 +334,7 @@
             <cast5>Peter Mayhew</cast5>
             <imdbLink></imdbLink>
             <youtube></youtube>
+            <poster>http://1.fwcdn.pl/po/05/25/525/7795412.3.jpg</poster>
             <comments>
                 <comment id="1">
                     <name>Lisa</name>
@@ -302,6 +357,7 @@
             <cast5>Cillian Murphy</cast5>
             <imdbLink></imdbLink>
             <youtube></youtube>
+            <poster>http://1.fwcdn.pl/po/08/91/500891/7560138.3.jpg</poster>
             <comments>
                 <comment id="1">
                     <name>Lisa</name>
@@ -324,6 +380,7 @@
             <cast5>Christopher Lee</cast5>
             <imdbLink></imdbLink>
             <youtube></youtube>
+            <poster>http://1.fwcdn.pl/po/14/51/31451/7639335.3.jpg</poster>
             <comments>
                 <comment id="1">
                     <name>Lisa</name>
@@ -345,6 +402,7 @@
             <cast5>Michael Berryman</cast5>
             <imdbLink></imdbLink>
             <youtube></youtube>
+            <poster>http://1.fwcdn.pl/po/10/19/1019/7440236.3.jpg</poster>
             <comments>
                 <comment id="1">
                     <name>Lisa</name>
@@ -367,6 +425,7 @@
             <cast5>Paul Sorvino</cast5>
             <imdbLink></imdbLink>
             <youtube></youtube>
+            <poster>http://1.fwcdn.pl/po/10/33/1033/6941458.3.jpg</poster>
             <comments>
                 <comment id="1">
                     <name>Lisa</name>
@@ -389,6 +448,7 @@
             <cast5>Gloria Foster</cast5>
             <imdbLink></imdbLink>
             <youtube></youtube>
+            <poster>http://1.fwcdn.pl/po/06/28/628/7171423.3.jpg</poster>
             <comments>
                 <comment id="1">
                     <name>Lisa</name>
@@ -411,35 +471,8 @@
             <cast5>Kamatari Fujiwara</cast5>
             <imdbLink></imdbLink>
             <youtube></youtube>
+            <poster>http://1.fwcdn.pl/po/13/69/31369/7030285.3.jpg</poster>
             <comments>
-                <comment id="1">
-                    <name>Lisa</name>
-                    <score>5</score>
-                    <content>qwerty</content>
-                </comment>
-            </comments>
-        </film>
-        <film id="20">
-            <title>x</title>
-            <director>x</director>
-            <year>x</year>
-            <duration>x</duration>
-            <country>x</country>
-            <genre1>x</genre1>
-            <genre2>x</genre2>
-            <cast1>x</cast1>
-            <cast2>x</cast2>
-            <cast3>x</cast3>
-            <cast4>x</cast4>
-            <cast5>x</cast5>
-            <imdbLink></imdbLink>
-            <youtube></youtube>
-            <comments>
-                <comment>
-                    <name>x</name>
-                    <score>1</score>
-                    <content>x</content>
-                </comment>
                 <comment id="1">
                     <name>Lisa</name>
                     <score>5</score>

@@ -61,7 +61,7 @@ public class FilmController {
     public ModelAndView postComment(@ModelAttribute("comment") Comment comment, @ModelAttribute Film selectedFilm){
         Film film = filmRepository.getFilm(selectedFilm.id);
         int index = filmRepository.getRoot().films.film.indexOf(film);
-        film.comments.comment.add(comment);
+        film.comments.addComment(comment);
         try {
             filmRepository.getRoot().films.film.set(index,film);
             filmRepository.saveXml();
@@ -71,7 +71,7 @@ public class FilmController {
         }
     }
 
-    @PostMapping("/search")
+    @RequestMapping(value = "/search")
     public ModelAndView searchMovies(@RequestParam("query") String query){
         List<Film> films = filmRepository.findFilmByTitle(query);
         ModelAndView model = new ModelAndView("filmsList");
