@@ -17,7 +17,7 @@ public class FilmRepository {
 
     private Root root;
 
-    private  String fileLocation = "C:\\Users\\miki\\Desktop\\film.xml";
+    private  String fileLocation = "C:\\Users\\Lisa\\Documents\\JavaProj\\FilmDatabase\\src\\film.xml";
 
     private FilmRepository(){
         root = ReadXml();
